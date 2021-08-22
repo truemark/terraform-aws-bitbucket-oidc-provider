@@ -1,5 +1,5 @@
 locals {
-  workspace_uuid = "{${replace(var.workspace_uuid, "/[{}]/", "")}}"
+  workspace_uuid = replace(var.workspace_uuid, "/[{}]/", "")
 
   url = "https://api.bitbucket.org/2.0/workspaces/${var.workspace_name}/pipelines-config/identity/oidc"
   client_id_list = [
